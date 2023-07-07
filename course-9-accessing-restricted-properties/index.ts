@@ -1,6 +1,6 @@
 export {};
 
-// Access modifiers and simplification of class declaration
+// Access modifiers & simplification of class declaration
 // CAUTION: You MUST specify the access modifiers for each variables inside the constructor
 
 //
@@ -20,6 +20,7 @@ class Point {
 
   setX(value: number) {
     //  setter: property of the class
+    if (value < 0) throw new Error("Value cannot be less than 0");
     this.x = value;
   }
 }
@@ -29,15 +30,15 @@ point.a; // accessible
 point.drawPoint(); // accessible
 
 //point.x; // Incorrect: not accessible outside the class --> private
-//point.y; // Incorrect: not accessible outside the class or subclasses --> private
+//point.y; // Incorrect: not accessible outside the class or subclasses --> protected
 
-point.getX(); // -> 2;
+console.log(point.getX()); // -> 2;
 point.setX(12);
 point.getX(); // -> 12
 
 //-----------------------------------------------------------------------
 
-// Simplify Write for getter & setter
+// Simplify Writing for getter & setter
 
 class Point2 {
   constructor(public a: number, private x?: number, protected y?: number) {}
@@ -63,9 +64,9 @@ point2.drawPoint(); // accessible
 //point2.x; // Incorrect: not accessible outside the class --> private
 //point2.y; // Incorrect: not accessible outside the class or subclasses --> private
 
-point2.X; // -> 2;
-point2.X = 12;
-point2.X; // -> 12
+point2.X; // -> 2; // get
+point2.X = 12; //  set
+point2.X; // -> 12  // get
 
 //-------------------------------------------------------------------------
 
@@ -96,5 +97,7 @@ point3.x; // -> 2;
 point3.x = 12;
 point3.x; // -> 12
 
-// SO: a property in a class looks like a field outside of the class,
-// but internally it is a method for that class
+/* 
+SO: a 'property' in a class looks like a field outside of the class,
+but internally it is a method of that class: a getter, a setter, 
+or a combination of both */

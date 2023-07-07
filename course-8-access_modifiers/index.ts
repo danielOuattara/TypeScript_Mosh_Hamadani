@@ -17,16 +17,18 @@ class Point {
 }
 
 let point = new Point(1, 2, 3);
-point.x;
+point.x; //  accessible and modifiable
+
 // point.y; // Incorrect: Property 'y' is private and only accessible within class 'Point'.ts(2341)
 // point.a; // Incorrect: Property 'a' is protected and only accessible within class 'Point' and its subclasses.ts(2445)
-point.drawPoint();
+
+point.drawPoint(); // Only method is accessible in this after instantiation
 
 // IMPORTANT: We can NOR access private & protected fields NEITHER modify them
 
 //---------------------------------------------------------------------------------
 
-// Access modifiers and simplification of class declaration
+// Access modifiers & simplification of class declaration
 // CAUTION: You MUST specify the access modifiers for each variables inside the constructor
 
 class Point2 {
@@ -37,9 +39,9 @@ class Point2 {
   }
 }
 
-let point2 = new Point2(1);
-point2.a;
-point2.drawPoint();
+let point2_1 = new Point2(1);
+point2_1.a;
+point2_1.drawPoint();
 
 // point2.x; // Incorrect: Property 'x' is private and only accessible within class 'Point'.ts(2341)
 // point2.y; // Incorrect: Property 'y' is protected and only accessible within class 'Point' and its subclasses.ts(2445)

@@ -17,7 +17,8 @@ console.log(messageEnd);
 let message2;
 message2 = "abc";
 
-let messageEnd1 = message2.endsWith("c"); // now methods completion doesn't work ! because "message2" is not explicitly declared as string
+let messageEnd1 = message2.endsWith("c");
+// now methods completion doesn't work ! because "message2" is not explicitly declared as string
 console.log(messageEnd1);
 
 //

@@ -8,7 +8,7 @@ point.drawPoint();
 
 //----------------------------------------
 
-let point_tow = new Point_Two(1, 2, 3);
+let point_tow = new Point_Two(4, 5, 6);
 point_tow.drawPoint();
 
 //-----------------------------------------------------------------------

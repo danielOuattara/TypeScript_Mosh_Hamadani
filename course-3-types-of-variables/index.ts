@@ -28,5 +28,5 @@ enum Color {
   Purple = 3,
 }
 
-let backGroundColor = Color.Red;
+let backgroundColor = Color.Red;
 console.log(Color.Purple);

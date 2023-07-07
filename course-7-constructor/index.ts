@@ -20,8 +20,9 @@ point.drawPoint();
 // --------------------------------------------
 
 /* 
-How to create a point object without setting its values 
-in the constructor: set constructor parameter optional */
+How to create a point object with optionally setting 
+its values in the constructor: set constructor parameter 
+optional */
 
 class Point2 {
   x?: number;
@@ -43,5 +44,9 @@ let point2 = new Point2(1, 2, 3);
 
 let point2_2 = new Point2(1); // create a point without optional values doesn't raise error
 point2_2.drawPoint2();
+
+// STOP --> 36:33
+
+//----------------------------- 3
 
 // STOP --> 36:33
